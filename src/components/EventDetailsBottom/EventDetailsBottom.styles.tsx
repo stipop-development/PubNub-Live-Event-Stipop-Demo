@@ -302,6 +302,7 @@ font-stretch: normal;
 font-style: normal;
 line-height: normal;
 letter-spacing: normal;
+cursor: pointer;
 margin-left: 5px;
   @media (max-width: 768px) {
     margin-left: 0px;
