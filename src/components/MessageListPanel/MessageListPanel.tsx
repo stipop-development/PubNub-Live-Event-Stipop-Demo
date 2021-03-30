@@ -132,6 +132,7 @@ export const MessageListPanel: React.SFC<MessageListPanelProps> = (props: Messag
                     border: 'solid 1px #d9d9d9',
                     backgroundColor: '#ffffff'
                   }}
+                  placeholder="Search for stickers"
                   value={query}
                   onChange={e => [search(e.target.value), setQuery(e.target.value)]}
                   >
@@ -150,7 +151,8 @@ export const MessageListPanel: React.SFC<MessageListPanelProps> = (props: Messag
                                 width: '72px',
                                 height: '70px',
                                 marginLeft: '20px',
-                                marginTop: '10px'
+                                marginTop: '10px',
+                                cursor: 'pointer'
                               }}  
                               src={stickers.stickerImg} 
                               onClick={() => handleClick(stickers.stickerImg)} 
