@@ -60,7 +60,7 @@ opacity: 1;
 //background: red;
 z-index: 1;
 margin: none;
-height: 100%;
+// height: 100%;
 width: 100%;
 object-fit: contain;
 //left                : 0px;
@@ -74,7 +74,7 @@ export const Block1 = styled.div`
 z-index: 3;
 display: grid;
 height: 500px;
-width: 200px;
+width: 300px;
 background-color: red;
 //position: absolute;
 margin: auto; 

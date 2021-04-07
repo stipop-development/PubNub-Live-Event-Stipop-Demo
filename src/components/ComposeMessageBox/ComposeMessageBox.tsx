@@ -55,7 +55,6 @@ export const SendMessageField = () => {
       marginRight: "50px",
       paddingTop: "12px",
       top: "-4px",
-      width: "258px",
       height: "46px",
       position: "absolute",
       left: "45px",

@@ -80,6 +80,7 @@ export const LiveFeedPanelReactPlayerWrapper = styled.div`
     //height: 250px;
     margin: 0px;
     z-index: 50;
+    width: 100%;
     opacity: 1;
     -webkit-background-size: contain;
     -moz-background-size: contain;

@@ -1,5 +1,5 @@
 import React, { useReducer, useEffect, useRef, useState }  from 'react';
-import { MessageListPanelWrapper } from './MessageListPanel.styles';
+import { MessageListPanelWrapper, StipopWindow } from './MessageListPanel.styles';
 import {  MessageInputWrapper, ComposeMessageBoxWrapper, UserImgWrapper, EmojiInputWrapper, StickerButton } from '../ComposeMessageBox/ComposeMessageBox.styles';
 import { MessageList } from '../MessageList/MessageList';
 import { AppStateProvider, appData, useAppState, Message, appStateReducer } from "../../AppStateContext";
@@ -90,6 +90,7 @@ export const MessageListPanel: React.SFC<MessageListPanelProps> = (props: Messag
           }
           );
           console.log('do validate');
+          setIsOpen(!isOpen);
         }
   }
 
@@ -110,17 +111,7 @@ export const MessageListPanel: React.SFC<MessageListPanelProps> = (props: Messag
             {/* <StickerButton onClick={() => setIsOpen(!isOpen)} /> */}
             <img src={'../../../../src/img/sticker.svg'} onClick={() => setIsOpen(!isOpen)} style={{ cursor: 'pointer'}} />
             {isOpen === true ?  
-              <div 
-                style={{ 
-                  width: '380px', 
-                  minWidth: '380px', 
-                  height: '430px', 
-                  backgroundColor: '#ffffff',
-                  border: 'solid 1px #d9d9d9',
-                  borderRadius: '6px',
-                  overflow: 'scroll'
-                }}
-              >
+              <StipopWindow>
                 <input
                   style={{
                     width: '330px',
@@ -165,7 +156,7 @@ export const MessageListPanel: React.SFC<MessageListPanelProps> = (props: Messag
                     :
                     <>
                       <div style={{ textAlign: 'center'}}>
-                          <img style={{width: '250px', height: '250px' }}src="https://img.stipop.io/2019/5/30/1559203142542_MOE_006.gif" />
+                          <img onClick={() => setIsOpen(!isOpen)} style={{width: '250px', height: '250px' }} src="https://img.stipop.io/2019/5/30/1559203142542_MOE_006.gif" />
                       </div>
                       <div style={{ textAlign: 'center', fontWeight: 'bold', marginTop: '0px', fontFamily: 'Rawline'}}>Search for Stickers!</div>
                     </> 
@@ -178,7 +169,7 @@ export const MessageListPanel: React.SFC<MessageListPanelProps> = (props: Messag
                   <img style={{width: '80px', height: '80px' }} src={sticker.length > 0 && sticker[4].packageImg} onClick={() => handleClick(sticker[4].packageImg)} />
                   <img style={{width: '80px', height: '80px' }} src={sticker.length > 0 && sticker[5].packageImg} onClick={() => handleClick(sticker[5].packageImg)} />
                 </div> */}
-              </div>
+              </StipopWindow>
               : 
               <div></div>
             }
